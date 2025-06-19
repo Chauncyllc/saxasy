@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alto Sax Notes & Fingering with Audio</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:800px; margin:auto; padding:20px; background:#f9f9f9; }
+    .note-card { margin-bottom:30px; background:#fff; padding:15px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1); }
+    svg { width:200px; height:auto; }
+    .circle { fill: green; opacity:0.8; }
+    button { margin-top:10px; padding:8px 12px; }
+  </style>
+</head>
+<body>
+  <h1>🎷 Alto Sax Notes & Fingerings</h1>
+  <p>Click a play icon to hear each note.</p>
+
+  <!-- Note B -->
+  <div class="note-card">
+    <h2>Note B</h2>
+    <svg viewBox="0 0 200 600">
+      <!-- Insert public-domain sax outline SVG here -->
+      <circle class="circle" cx="50" cy="150" r="10"></circle><!-- left 1 -->
+      <circle class="circle" cx="150" cy="550" r="8" fill="transparent"/><!-- thumb -->
+    </svg>
+    <br>
+    <button onclick="playNote('B')">▶️ Play B</button>
+    <p>Left: 1 | Right: – | Thumb: octave key</p>
+  </div>
+
+  <!-- Repeat for A, G, C, D, E, F -->
+
+  <audio id="audio_B" src="audio/B.mp3"></audio>
+
+  <script>
+    function playNote(n) {
+      const a = document.getElementById('audio_' + n);
+      if (a) { a.currentTime = 0; a.play(); }
+    }
+  </script>
+</body>
+</html>
